@@ -47,7 +47,7 @@ const BRAND = {
   email: "ododanli1995@gmail.com",
   links: {
     github: "https://github.com/A5LAN",
-    linkedin: "https://www.linkedin.com/in/your-handle", // TODO
+    linkedin: "https://www.linkedin.com/in/okandodanli", // TODO
     resume: "/resume.pdf", // TODO
   },
 };
