@@ -11,7 +11,6 @@ import {
   Code2, // </> icon
   Wrench,
   Search,
-  X,
   Info,
   Server, // server icon for back-end
 } from "lucide-react";
@@ -42,6 +41,7 @@ import {
 
 const BRAND = {
   name: "Okan Dodanli",
+  // Keeping your title but tightening the positioning inside About (front-end first, full-stack capable)
   title: "Software Engineer · Full Stack Developer",
   location: "Toronto, ON",
   email: "ododanli1995@gmail.com",
@@ -55,7 +55,13 @@ const BRAND = {
 // Inline SVG fallbacks
 function AwsIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" role="img" aria-label="AWS" className={className} xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 24 24"
+      role="img"
+      aria-label="AWS"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill="#FF9900"
         d="M6.5 9.2c-.3 0-.6.2-.7.5l-2 7.1c-.1.5.2 1 .7 1.1.5.1 1-.2 1.1-.7l.4-1.4h2.1l.4 1.4c.1.5.6.8 1.1.7.5-.1.8-.6.7-1.1l-2-7.1c-.1-.3-.4-.5-.7-.5Zm-.2 4.8.8-2.8.8 2.8H6.3Z"
@@ -73,7 +79,13 @@ function AwsIcon({ className }: { className?: string }) {
 }
 function AzureIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" role="img" aria-label="Azure" className={className} xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 24 24"
+      role="img"
+      aria-label="Azure"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill="#0078D4"
         d="M3.6 18.8 9.7 4.3c.1-.2.3-.3.5-.3h6.2c.4 0 .6.4.4.8L12.4 14h5.6c.5 0 .7.6.3 1l-6.2 5.3c-.1.1-.2.1-.3.1H4.1c-.4 0-.7-.4-.5-.9Z"
@@ -83,7 +95,13 @@ function AzureIcon({ className }: { className?: string }) {
 }
 function FramerIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" role="img" aria-label="Framer" className={className} xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 24 24"
+      role="img"
+      aria-label="Framer"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path fill="#000" d="M6 3h12v6H6V3Zm0 6h12l-6 6H6V9Zm6 6 6 6H6v-6h6Z" />
     </svg>
   );
@@ -103,6 +121,7 @@ const TECH_ICONS: Record<string, React.ReactNode> = {
   Express: <SiExpress className="h-4 w-4 text-white" />,
   Postgres: <SiPostgresql className="h-4 w-4 text-[#4169E1]" />,
   PostgreSQL: <SiPostgresql className="h-4 w-4 text-[#4169E1]" />,
+  // Consistency choice: use "Back-End" everywhere
   "Postgres/SQL": <SiPostgresql className="h-4 w-4 text-[#4169E1]" />,
   SQL: <SiPostgresql className="h-4 w-4 text-[#4169E1]" />,
   Python: <SiPython className="h-4 w-4 text-[#3776AB]" />,
@@ -137,13 +156,20 @@ const PROJECTS = [
     id: "crate",
     featured: true,
     name: "Crate Organizer",
-    tagline: "A desktop-style organizer for fast tagging, filtering, and crate creation.",
-    highlights: ["Tagging + smart filters", "Crate generation workflows", "Polished UI states (empty, loading, errors)"],
+    tagline:
+      "A desktop-style organizer for fast tagging, filtering, and crate creation.",
+    highlights: [
+      "Tagging + smart filters",
+      "Crate generation workflows",
+      "Polished UI states (empty, loading, errors)",
+    ],
     stack: ["React", "TypeScript", "Tailwind", "Electron"],
     live: "https://example.com",
     repo: "https://github.com/your-handle/crate-organizer",
-    problem: "Large libraries become slow to manage when UI state and workflows aren’t structured.",
-    solution: "A focused interface with fast search + predictable state + reusable “crate” workflows.",
+    problem:
+      "Large libraries become slow to manage when UI state and workflows aren’t structured.",
+    solution:
+      "A focused interface with fast search + predictable state + reusable “crate” workflows.",
     whatNext: ["Rules engine", "Metadata enrichment", "Cloud profiles"],
     category: "Product App",
   },
@@ -152,12 +178,17 @@ const PROJECTS = [
     featured: false,
     name: "Real-Time Data Dashboard",
     tagline: "Responsive dashboard for changing data without clutter.",
-    highlights: ["Reusable components", "Caching + rate-limit protection", "Accessible UI + keyboard navigation"],
+    highlights: [
+      "Reusable components",
+      "Caching + rate-limit protection",
+      "Accessible UI + keyboard navigation",
+    ],
     stack: ["React", "TypeScript", "REST APIs"],
     live: "https://example.com",
     repo: "https://github.com/your-handle/realtime-dashboard",
     problem: "Live data UIs often become noisy and hard to read under load.",
-    solution: "Clear hierarchy + careful loading/error states + performance-minded fetching patterns.",
+    solution:
+      "Clear hierarchy + careful loading/error states + performance-minded fetching patterns.",
     whatNext: ["Saved views", "Export (CSV/PDF)", "Pagination"],
     category: "Dashboard",
   },
@@ -170,18 +201,15 @@ const PROJECTS = [
     stack: ["Node", "Express", "Postgres"],
     live: "https://example.com",
     repo: "https://github.com/your-handle/mini-api-auth",
-    problem: "Take-homes expect structure: predictable endpoints, errors, and validation.",
-    solution: "A minimal template: routes/services, validation, consistent errors, tidy folder layout.",
+    problem:
+      "Take-homes expect structure: predictable endpoints, errors, and validation.",
+    solution:
+      "A minimal template: routes/services, validation, consistent errors, tidy folder layout.",
     whatNext: ["OpenAPI docs", "Rate limiting", "Docker compose"],
-    category: "Backend",
+    category: "Back-End",
   },
 ];
 
-// ✅ Your requested skill grouping + icons:
-// - Front-End: </> (Code2)
-// - UI/UX: </> (Code2)
-// - Back-End + Servers: Server
-// - Frameworks + Tools: Wrench
 const SKILLS = [
   {
     icon: Code2,
@@ -193,19 +221,45 @@ const SKILLS = [
     icon: Code2,
     title: "UI/UX",
     grad: GRADS.b,
-    items: ["Component design", "State management", "Accessibility", "Performance", "Responsive layout"],
+    items: [
+      "Component design",
+      "State management",
+      "Accessibility",
+      "Performance",
+      "Responsive layout",
+    ],
   },
   {
     icon: Server,
     title: "Back-End + Servers",
     grad: GRADS.c,
-    items: ["Node/Express", "Python/FastAPI", "REST APIs", "Postgres/SQL", "MongoDB", "Supabase"],
+    items: [
+      "Node/Express",
+      "Python/FastAPI",
+      "REST APIs",
+      "Postgres/SQL",
+      "MongoDB",
+      "Supabase",
+    ],
   },
   {
     icon: Wrench,
     title: "Frameworks + Tools",
     grad: GRADS.d,
-    items: ["Next.js", "Redux", "Framer Motion", "Material UI", "shadcn/ui", "Git/GitHub", "Vite", "Docker", "AWS", "Azure", "Postman", "npm"],
+    items: [
+      "Next.js",
+      "Redux",
+      "Framer Motion",
+      "Material UI",
+      "shadcn/ui",
+      "Git/GitHub",
+      "Vite",
+      "Docker",
+      "AWS",
+      "Azure",
+      "Postman",
+      "npm",
+    ],
   },
 ];
 
@@ -245,10 +299,10 @@ function ButtonLink({
     variant === "primary"
       ? "bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-600 text-white hover:brightness-110 shadow-sm"
       : variant === "blackHover"
-        ? "bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-600 text-white hover:bg-black hover:from-black hover:via-black hover:to-black"
-        : variant === "outline"
-          ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
-          : "text-zinc-200 hover:bg-white/5";
+      ? "bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-600 text-white hover:bg-black hover:from-black hover:via-black hover:to-black"
+      : variant === "outline"
+      ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
+      : "text-zinc-200 hover:bg-white/5";
 
   return (
     <a
@@ -286,8 +340,12 @@ function Section({
               {eyebrow}
             </div>
           ) : null}
-          <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-2 max-w-3xl text-zinc-300">{subtitle}</p> : null}
+          <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            {title}
+          </h2>
+          {subtitle ? (
+            <p className="mt-2 max-w-3xl text-zinc-300">{subtitle}</p>
+          ) : null}
         </div>
         {children}
       </div>
@@ -318,17 +376,31 @@ function TopNav() {
 
         <div className="hidden items-center gap-1 sm:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="rounded-xl px-3 py-2 text-sm text-zinc-300 hover:bg-white/5 hover:text-white">
+            <a
+              key={l.href}
+              href={l.href}
+              className="rounded-xl px-3 py-2 text-sm text-zinc-300 hover:bg-white/5 hover:text-white"
+            >
               {l.label}
             </a>
           ))}
         </div>
 
         <div className="flex w-full items-center justify-end gap-2 sm:w-auto">
-          <ButtonLink href={BRAND.links.resume} variant="outline" icon={<FileText className="h-4 w-4" />} newTab className="h-10 flex-1 sm:flex-none">
+          <ButtonLink
+            href={BRAND.links.resume}
+            variant="outline"
+            icon={<FileText className="h-4 w-4" />}
+            newTab
+            className="h-10 flex-1 sm:flex-none"
+          >
             Resume
           </ButtonLink>
-          <ButtonLink href="#contact" icon={<ArrowRight className="h-4 w-4" />} className="h-10 flex-1 sm:flex-none">
+          <ButtonLink
+            href="#contact"
+            icon={<ArrowRight className="h-4 w-4" />}
+            className="h-10 flex-1 sm:flex-none"
+          >
             Let’s talk
           </ButtonLink>
         </div>
@@ -354,17 +426,27 @@ function Hero() {
               {BRAND.location}
             </div>
 
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">{BRAND.name}</h1>
-            <p className="mt-3 text-lg font-medium text-zinc-200">{BRAND.title}</p>
+            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              {BRAND.name}
+            </h1>
+            <p className="mt-3 text-lg font-medium text-zinc-200">
+              {BRAND.title}
+            </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              {["React", "TypeScript", "Tailwind", "REST APIs", "Postgres/SQL"].map((t) => (
-                <Badge key={t} label={t} />
-              ))}
+              {["React", "TypeScript", "Tailwind", "REST APIs", "Postgres/SQL"].map(
+                (t) => (
+                  <Badge key={t} label={t} />
+                ),
+              )}
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="#projects" variant="blackHover" icon={<ArrowRight className="h-4 w-4" />}>
+              <ButtonLink
+                href="#projects"
+                variant="blackHover"
+                icon={<ArrowRight className="h-4 w-4" />}
+              >
                 View projects
               </ButtonLink>
 
@@ -377,11 +459,20 @@ function Hero() {
                 LinkedIn
               </ButtonLink>
 
-              <ButtonLink href={BRAND.links.github} variant="outline" icon={<Github className="h-4 w-4" />} newTab>
+              <ButtonLink
+                href={BRAND.links.github}
+                variant="outline"
+                icon={<Github className="h-4 w-4" />}
+                newTab
+              >
                 GitHub
               </ButtonLink>
 
-              <ButtonLink href={`mailto:${BRAND.email}`} variant="ghost" icon={<Mail className="h-4 w-4" />}>
+              <ButtonLink
+                href={`mailto:${BRAND.email}`}
+                variant="ghost"
+                icon={<Mail className="h-4 w-4" />}
+              >
                 {BRAND.email}
               </ButtonLink>
             </div>
@@ -391,8 +482,12 @@ function Hero() {
             <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className="text-sm font-semibold text-white">What I bring</div>
-                  <p className="mt-1 text-sm text-zinc-300">Clean UI, predictable state, and pragmatic full-stack delivery.</p>
+                  <div className="text-sm font-semibold text-white">
+                    What I bring
+                  </div>
+                  <p className="mt-1 text-sm text-zinc-300">
+                    Clean UI, predictable state, and pragmatic full-stack delivery.
+                  </p>
                 </div>
                 <div className="rounded-2xl bg-gradient-to-br from-indigo-600 via-fuchsia-600 to-rose-600 p-2 text-white">
                   <Sparkles className="h-5 w-5" />
@@ -400,14 +495,20 @@ function Hero() {
               </div>
 
               <div className="mt-5 space-y-3">
-                {["Strong React/TS fundamentals", "Readable, testable structure", "Great UX states", "Comfortable with APIs + data"].map(
-                  (t) => (
-                    <div key={t} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
-                      <div className="h-2 w-2 rounded-full bg-white/80" />
-                      <div className="text-sm text-zinc-200">{t}</div>
-                    </div>
-                  ),
-                )}
+                {[
+                  "Strong React/TS fundamentals",
+                  "Readable, testable structure",
+                  "Great UX states",
+                  "Comfortable with APIs + data",
+                ].map((t) => (
+                  <div
+                    key={t}
+                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3"
+                  >
+                    <div className="h-2 w-2 rounded-full bg-white/80" />
+                    <div className="text-sm text-zinc-200">{t}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -433,14 +534,22 @@ function Projects() {
     const q = query.trim().toLowerCase();
     return PROJECTS.filter((p) => {
       const matchesQuery =
-        !q || p.name.toLowerCase().includes(q) || p.tagline.toLowerCase().includes(q) || p.stack.join(" ").toLowerCase().includes(q);
+        !q ||
+        p.name.toLowerCase().includes(q) ||
+        p.tagline.toLowerCase().includes(q) ||
+        p.stack.join(" ").toLowerCase().includes(q);
       const matchesCat = category === "All" || p.category === category;
       return matchesQuery && matchesCat;
     }).sort((a, b) => Number(b.featured) - Number(a.featured));
   }, [query, category]);
 
   return (
-    <Section id="projects" eyebrow="Work" title="Projects" subtitle="Curated and easy to scan — Build notes won’t change card height.">
+    <Section
+      id="projects"
+      eyebrow="Work"
+      title="Projects"
+      subtitle="Curated and easy to scan. Technical notes won’t change card height."
+    >
       <div className="mb-6 grid gap-3 sm:grid-cols-12 sm:items-end">
         <div className="sm:col-span-7">
           <label className="text-xs font-medium text-zinc-300">Search</label>
@@ -455,7 +564,9 @@ function Projects() {
           </div>
         </div>
         <div className="sm:col-span-5">
-          <label className="text-xs font-medium text-zinc-300">Category</label>
+          <label className="text-xs font-medium text-zinc-300">
+            Category
+          </label>
           <div className="mt-2 flex flex-wrap gap-2">
             {categories.map((c) => (
               <button
@@ -463,7 +574,9 @@ function Projects() {
                 onClick={() => setCategory(c)}
                 className={cx(
                   "rounded-2xl border px-3 py-2 text-sm transition",
-                  category === c ? "border-white/10 bg-white/10 text-white" : "border-white/10 bg-white/5 text-zinc-200 hover:bg-white/10",
+                  category === c
+                    ? "border-white/10 bg-white/10 text-white"
+                    : "border-white/10 bg-white/5 text-zinc-200 hover:bg-white/10",
                 )}
               >
                 {c}
@@ -485,8 +598,12 @@ function Projects() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className="text-xs font-medium text-zinc-400">{p.category}</div>
-                  <h3 className="mt-1 text-lg font-semibold text-white">{p.name}</h3>
+                  <div className="text-xs font-medium text-zinc-400">
+                    {p.category}
+                  </div>
+                  <h3 className="mt-1 text-lg font-semibold text-white">
+                    {p.name}
+                  </h3>
                 </div>
                 {p.featured ? (
                   <span className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-600 px-3 py-1 text-xs font-medium text-white">
@@ -513,10 +630,20 @@ function Projects() {
               </ul>
 
               <div className="mt-5 grid gap-2 sm:grid-cols-2">
-                <ButtonLink href={p.live} variant="outline" icon={<ExternalLink className="h-4 w-4" />} newTab>
+                <ButtonLink
+                  href={p.live}
+                  variant="outline"
+                  icon={<ExternalLink className="h-4 w-4" />}
+                  newTab
+                >
                   Live
                 </ButtonLink>
-                <ButtonLink href={p.repo} variant="outline" icon={<Github className="h-4 w-4" />} newTab>
+                <ButtonLink
+                  href={p.repo}
+                  variant="outline"
+                  icon={<Github className="h-4 w-4" />}
+                  newTab
+                >
                   Repo
                 </ButtonLink>
               </div>
@@ -527,7 +654,7 @@ function Projects() {
                   className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-black/30 px-4 py-2 text-sm font-medium text-white transition hover:bg-black/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500/50"
                 >
                   <Info className="h-4 w-4 text-zinc-200" />
-                  Build notes
+                  Technical notes
                 </button>
               </div>
 
@@ -535,29 +662,51 @@ function Projects() {
                 <div className="absolute inset-0 z-10 rounded-3xl border border-white/10 bg-zinc-950/95 p-6 backdrop-blur">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <div className="text-xs font-semibold text-zinc-400">Build notes</div>
-                      <div className="mt-1 text-lg font-semibold text-white">{p.name}</div>
+                      <div className="text-xs font-semibold text-zinc-400">
+                        Technical notes
+                      </div>
+                      <div className="mt-1 text-lg font-semibold text-white">
+                        {p.name}
+                      </div>
                     </div>
                     <button
                       onClick={() => setOpenProjectId(null)}
-                      className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white hover:bg-white/10"
                       aria-label="Close"
+                      className="relative grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white hover:bg-white/10"
                     >
-                      <X className="h-5 w-5" />
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-5 w-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
                     </button>
+
                   </div>
 
                   <div className="mt-5 space-y-4 text-sm text-zinc-200">
                     <div>
-                      <div className="text-xs font-semibold text-zinc-400">Problem</div>
+                      <div className="text-xs font-semibold text-zinc-400">
+                        Problem
+                      </div>
                       <div className="mt-1">{p.problem}</div>
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-zinc-400">Solution</div>
+                      <div className="text-xs font-semibold text-zinc-400">
+                        Solution
+                      </div>
                       <div className="mt-1">{p.solution}</div>
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-zinc-400">What I’d add next</div>
+                      <div className="text-xs font-semibold text-zinc-400">
+                        What I’d add next
+                      </div>
                       <ul className="mt-2 list-disc space-y-1 pl-5">
                         {p.whatNext.map((n) => (
                           <li key={n}>{n}</li>
@@ -585,17 +734,32 @@ function Projects() {
 
 function Skills() {
   return (
-    <Section id="skills" eyebrow="Skills" title="Skills" subtitle="Front-End, UI/UX, Back-End + Servers, and Frameworks + Tools — clean grouping.">
+    <Section
+      id="skills"
+      eyebrow="Skills"
+      title="Skills"
+      subtitle="Front-End, UI/UX, Back-End + Servers, and Frameworks + Tools."
+    >
       <div className="grid gap-6 lg:grid-cols-4 items-stretch">
         {SKILLS.map((s) => (
-          <div key={s.title} className="h-full rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div
+            key={s.title}
+            className="h-full rounded-3xl border border-white/10 bg-white/5 p-6"
+          >
             <div className="flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-2xl bg-black/40 text-white">
                 <s.icon className="h-5 w-5" />
               </div>
 
               <div className="text-sm font-semibold">
-                <span className={cx("bg-gradient-to-r bg-clip-text text-transparent", s.grad)}>{s.title}</span>
+                <span
+                  className={cx(
+                    "bg-gradient-to-r bg-clip-text text-transparent",
+                    s.grad,
+                  )}
+                >
+                  {s.title}
+                </span>
               </div>
             </div>
 
@@ -613,33 +777,40 @@ function Skills() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About" title="About" subtitle="Focused, hiring-friendly context.">
+    <Section
+      id="about"
+      eyebrow="About"
+      title="About"
+      subtitle="Front-End focused, full-stack capable."
+    >
       <div className="grid gap-6 lg:grid-cols-12 items-stretch">
         <div className="lg:col-span-7 h-full">
           <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-6">
             <p className="text-zinc-200">
-              I’m a full-stack developer who cares a lot about how software feels to use — clear hierarchy, crisp UI, and predictable behavior.
-              I enjoy designing components that scale, state that stays maintainable, and interfaces that communicate well under real-world constraints.
+              I am a front-end focused developer who builds clean, modern interfaces that feel fast and intentional.
+              I care about UI engineering details: component structure, predictable state, accessibility, and performance.
             </p>
 
             <p className="mt-4 text-zinc-200">
-              I’m strongest in React + TypeScript, and comfortable supporting UI work with back-end APIs and SQL-backed data.
-              I like keeping implementations pragmatic: ship the smallest valuable slice, then iterate with clean commits and tight feedback loops.
+              I work primarily in React and TypeScript, and I am comfortable going full stack when needed.
+              That includes building and integrating APIs, working with SQL and Postgres, and handling real-world data and edge cases.
             </p>
 
             <p className="mt-4 text-zinc-200">
-              My background includes working with messy datasets and edge cases, which translates directly to building UIs that don’t fall apart
-              when things aren’t perfect — loading states, errors, validation, and performance under pressure.
+              I like shipping in small, high-quality iterations with clear commits and readable code.
+              My goal is always the same: an interface that communicates well through loading, empty, and error states, and stays easy to maintain as it grows.
             </p>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-4">
-              <div className="text-xs font-semibold text-zinc-400">What teams get</div>
+              <div className="text-xs font-semibold text-zinc-400">
+                What teams get
+              </div>
               <ul className="mt-3 space-y-2 text-sm text-zinc-200">
                 {[
-                  "Clean UI hierarchy + consistent spacing and typography",
-                  "Predictable state and safer edge-case handling",
-                  "Practical performance improvements (not premature complexity)",
-                  "Readable code that stays easy to extend",
+                  "Clean UI hierarchy with consistent spacing and typography",
+                  "Predictable state and safe edge-case handling",
+                  "Accessibility and keyboard-friendly interactions",
+                  "Practical performance improvements without over-engineering",
                 ].map((t) => (
                   <li key={t} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/70" />
@@ -657,10 +828,10 @@ function About() {
             <dl className="mt-4 space-y-3 text-sm">
               {[
                 ["Location", BRAND.location],
-                ["Primary stack", "React · TypeScript · Node · SQL"],
-                ["UI focus", "Components · Accessibility · Performance"],
-                ["Back-end", "REST APIs · Postgres/SQL · Validation"],
-                ["Working style", "Ship small → iterate fast"],
+                ["Front-End", "React · TypeScript · UI engineering"],
+                ["Back-End", "REST APIs · Postgres/SQL · Validation"],
+                ["UI focus", "Accessibility · Performance · Responsive layout"],
+                ["Working style", "Ship small, iterate fast"],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-start justify-between gap-4">
                   <dt className="text-zinc-400">{k}</dt>
@@ -670,9 +841,15 @@ function About() {
             </dl>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-4">
-              <div className="text-xs font-semibold text-zinc-400">Best way to evaluate</div>
-              <div className="mt-1 text-sm font-semibold text-white">A 5-minute project walkthrough</div>
-              <p className="mt-2 text-sm text-zinc-200">Problem → approach → tradeoffs → what I’d improve next.</p>
+              <div className="text-xs font-semibold text-zinc-400">
+                Best way to evaluate
+              </div>
+              <div className="mt-1 text-sm font-semibold text-white">
+                A 5-minute project walkthrough
+              </div>
+              <p className="mt-2 text-sm text-zinc-200">
+                Problem, approach, tradeoffs, and what I would improve next.
+              </p>
             </div>
           </div>
         </div>
@@ -683,10 +860,17 @@ function About() {
 
 function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Contact" subtitle="Quick and direct.">
+    <Section
+      id="contact"
+      eyebrow="Contact"
+      title="Contact"
+      subtitle="Quick and direct."
+    >
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
         <div className="text-sm font-semibold text-white">Send me a message</div>
-        <p className="mt-2 text-sm text-zinc-300">Email is best — include the role + team and what you’d like to learn.</p>
+        <p className="mt-2 text-sm text-zinc-300">
+          Email is best. Include the role and team, and what you want to learn about my work.
+        </p>
 
         <div className="mt-5 flex flex-wrap gap-3">
           <ButtonLink href={`mailto:${BRAND.email}`} icon={<Mail className="h-4 w-4" />}>
@@ -702,11 +886,21 @@ function Contact() {
             LinkedIn
           </ButtonLink>
 
-          <ButtonLink href={BRAND.links.github} variant="outline" icon={<Github className="h-4 w-4" />} newTab>
+          <ButtonLink
+            href={BRAND.links.github}
+            variant="outline"
+            icon={<Github className="h-4 w-4" />}
+            newTab
+          >
             GitHub
           </ButtonLink>
 
-          <ButtonLink href={BRAND.links.resume} variant="outline" icon={<FileText className="h-4 w-4" />} newTab>
+          <ButtonLink
+            href={BRAND.links.resume}
+            variant="outline"
+            icon={<FileText className="h-4 w-4" />}
+            newTab
+          >
             Resume
           </ButtonLink>
         </div>
